@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PO-33 Tools</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/61a9804b-8603-47b8-ac1e-400f462046a1%2Ffavicon.ico?v=1581108805966"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.9/lib/draggable.bundle.js"></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="sampler-pane pane open-pane">
+      <!-- Populated by script.js -->
+    </div>
+    <div class="menu-pane pane">
+      <ul class="settings">
+        <li>
+          <label>Speed<input type="number" min="0" step="any"/></label>
+        </li>
+        <li>
+          <label>Max ms<input type="number" min="0" step="any"/></label>
+        </li>
+        <li>
+          <label>Gap ms<input type="number" min="0" step="any"/></label>
+        </li>
+        <li>
+          <label>Pad names<input type="text"/></label>
+        </li>
+        <li>
+          To re-apply the same settings next time,
+          <a
+            class="settings-link"
+            href="/"
+            target="_blank"
+            ref="noopener noreferrer"
+            >bookmark this link</a
+          >.
+        </li>
+      </ul>
+    </div>
+    <div class="info-pane pane">
+      <div class="info-inner">
+        <p>
+          A drum sample loader for
+          <a
+            href="https://teenage.engineering/guides/po-33/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Pocket Operator K.O.</a
+          >
+        </p>
+        <p>
+          Drag and drop an audio file (.wav, .mp3, .ogg, …) onto a pad. Click to
+          play the sample. Once you've loaded a few, plug in your K.O. and click
+          “Play all” to record the samples into a drum bank.
+        </p>
+        <p>
+          For full instructions, please see
+          <a href="https://glitch.com/edit/#!/po-33?path=README.md%3A1%3A0"
+            >the project’s online manual</a
+          >.
+        </p>
+        <p>
+          Created by
+          <a href="rileyjshaw.com" target="_blank" rel="noopener noreferrer"
+            >Riley</a
+          >. Licened under
+          <a
+            href="https://glitch.com/edit/#!/po-33?path=LICENSE.md%3A1%3A0"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GNU GPLv3</a
+          >.
+          <a
+            href="https://glitch.com/edit/#!/po-33"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Source code available to remix on Glitch</a
+          >.
+        </p>
+      </div>
+    </div>
+    <div class="toggles">
+      <button class="menu-toggle toggle" aria-label="Toggle menu pane">
+        <svg
+          focusable="false"
+          class="open nut-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          viewbox="0 0 100 100"
+          enable-background="new 0 0 100 100"
+          xml:space="preserve"
+        >
+          <path
+            d="M75,6.699H25L0,50l25,43.301h50L100,50L75,6.699z M50,70c-11.045,0-20-8.955-20-20s8.955-20,20-20s20,8.955,20,20  S61.045,70,50,70z"
+          />
+        </svg>
+        <div class="close">✖</div>
+      </button>
+      <button class="info-toggle toggle" aria-label="Toggle info pane">
+        <div class="open info-icon" aria-hidden="true">?</div>
+        <div class="close">✖</div>
+      </button>
+    </div>
+  </body>
+</html>
