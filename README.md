@@ -2,7 +2,7 @@
 
 A drum sample loader for my [Pocket Operator K.O.](https://teenage.engineering/guides/po-33/en)
 
-# [~\*~ TRY IT HERE ~*~](http://po-33.glitch.me/)
+# [~\*~ TRY IT HERE ~*~](https://rileyjshaw.com/po-33/)
 
 ## Usage
 
@@ -44,7 +44,7 @@ Click the nut icon in the top right to access a settings panel.
 
 If you want to start the sampler with different settings, bookmark the link generated on the settings pane. For example, the following URL:
 
-[`https://po-33.glitch.me/?speed=2&maxMs=2000&gapMs=20&padNames=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16`](https://po-33.glitch.me/?speed=2&maxMs=2000&gapMs=20&padNames=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16)
+[`https://rileyjshaw.com/po-33/?speed=2&maxMs=2000&gapMs=20&padNames=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16`](https://rileyjshaw.com/po-33/?speed=2&maxMs=2000&gapMs=20&padNames=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16)
 
 …will start you off at 2x speed, with a max duration of 2s, a gap of 20s, and pads renamed to their numbers.
 
@@ -72,4 +72,4 @@ This works with whatever file types your browser supports. It should work well w
 
 ### License
 
-[GNU GPLv3](https://glitch.com/edit/#!/po-33?path=LICENSE.md%3A1%3A0)
+[GNU GPLv3](https://github.com/rileyjshaw/po-33/blob/master/README.md)
