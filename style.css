@@ -29,6 +29,10 @@ p {
   font-size: 20px;
 }
 
+svg {
+  width: 100%;
+}
+
 .pads {
   counter-reset: number;
   display: grid;
