@@ -34,11 +34,11 @@ You can reorder samples by dragging them. If you drag a sample out of the contai
 
 Click the nut icon in the top right to access a settings panel.
 
-- `speed`: Control the playback rate of samples. A value of `2` will play at double speed. `0.5` will play at half speed. Expects a number > 0.
+- **Speed:** Control the playback rate of samples. A value of `2` will play at double speed. `0.5` will play at half speed. Expects a number > 0.
   - Note: This is useful for preserving device memory. Set `speed=2` and pitch-shift the sample down by an octave on the K.O. to fit twice as much data.
-- `maxMs`: Cuts off samples after a specified maximum duration, in milliseconds. Useful for kick and crash samples that just. never. end.
-- `gapMs`: If your K.O. is having trouble auto-slicing each drum sample, increasing the milliseconds between sample playback might help. Defaults to no gap, since I tend to trim it manually anyway.
-- `padNames`: I try to keep a specific layout with my kits, but you probably have a different style! You can tweak the text on each pad from 1–16, separated by commas.
+- **Max sample length (ms):** Cuts off samples after a specified maximum duration, in milliseconds. Useful for kick and crash samples that just. never. end.
+- **Gap between samples (ms):** If your K.O. is having trouble auto-slicing each drum sample, increasing the milliseconds between sample playback might help. Defaults to no gap, since I tend to trim it manually anyway.
+- **Pad names:** I try to keep a specific layout with my kits, but you probably have a different style! You can tweak the text on each pad from 1–16, separated by commas.
 
 #### Default settings
 
