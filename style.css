@@ -80,6 +80,10 @@ button {
   border-radius: 1.5vmin;
 }
 
+.sampler-pane input {
+  display: none;
+}
+
 .pads button {
   width: 16vmin;
 }
@@ -191,13 +195,13 @@ button {
   margin: 24px 36px 0 0;
 }
 
-label {
+.settings label {
   font-weight: 600;
   font-size: 24px;
   padding: 0.3em 0;
 }
 
-input {
+.settings input {
   width: 6em;
   font: inherit;
   text-align: center;

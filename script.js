@@ -3,7 +3,7 @@ const { Sortable } = window.Draggable;
 function updateUI() {
   updatePadNames();
   updateTotalSampleLength();
-  updateInputs();
+  updateSettingsInputs();
   updateSettingsLink();
 }
 
@@ -31,11 +31,11 @@ function updateTotalSampleLength() {
   secondsContainer.textContent = length === 1 ? "second" : "seconds";
 }
 
-function updateInputs() {
+function updateSettingsInputs() {
   ["speed", "maxMs", "gapMs"].forEach(
-    (setting, i) => (inputs[i].value = settings[setting])
+    (setting, i) => (settingsInputs[i].value = settings[setting])
   );
-  inputs[3].value = settings.padNames
+  settingsInputs[3].value = settings.padNames
     .map(name => name.replace(/,/g, "\\,"))
     .join(", ");
 }
@@ -66,7 +66,17 @@ const settings = {
 const pads = Array.from({ length: 16 }, (_, i) => {
   const li = document.createElement("li");
   li.className = "empty";
+  const input = document.createElement("input");
   const button = document.createElement("button");
+  input.setAttribute("type", "file");
+  input.setAttribute("accept", "audio/*");
+  input.setAttribute("multiple", "");
+  input.addEventListener("change", () => {
+    if (input.files) {
+      processFiles(input.files, i);
+    }
+  });
+  li.append(input);
   li.append(button);
   return li;
 });
@@ -83,15 +93,15 @@ const sortable = new Sortable(container, {
   distance: 10
 });
 
-const inputs = document.querySelectorAll("input");
+const settingsInputs = document.querySelectorAll(".settings input");
 ["speed", "maxMs", "gapMs"].forEach((setting, i) => {
-  inputs[i].addEventListener("change", e => {
+  settingsInputs[i].addEventListener("change", e => {
     settings[setting] = +e.target.value;
     updateTotalSampleLength();
     updateSettingsLink();
   });
 });
-inputs[3].addEventListener("change", e => {
+settingsInputs[3].addEventListener("change", e => {
   settings.padNames = e.target.value
     .replace(/ /g, "")
     .split(/(?<!\\),/)
@@ -205,21 +215,21 @@ const play = i => {
   }
 };
 
-const dropEvent = i => e => {
-  e.stopPropagation();
-  e.preventDefault();
-
-  const droppedFiles = e.dataTransfer.files;
-  const numFiles = droppedFiles.length;
-
+const processFiles = (files, i) => {
   (function processFile(n) {
     const reader = new FileReader();
     reader.onload = e => {
       initAudio(e.target.result, i + n);
-      if (++n < numFiles && i + n < sources.length) processFile(n);
+      if (++n < files.length && i + n < sources.length) processFile(n);
     };
-    reader.readAsArrayBuffer(droppedFiles[n]);
+    reader.readAsArrayBuffer(files[n]);
   })(0);
+};
+
+const dropEvent = i => e => {
+  e.stopPropagation();
+  e.preventDefault();
+  processFiles(e.dataTransfer.files, i);
 };
 
 const blockEvent = e => {
@@ -231,7 +241,13 @@ const blockEvent = e => {
 pads.forEach((pad, i) => {
   pad.addEventListener("drop", dropEvent(i), false);
   pad.addEventListener("dragover", blockEvent, false);
-  pad.querySelector("button").addEventListener("click", () => play(i), false);
+  pad.querySelector("button").addEventListener(
+    "click",
+    () => {
+      sources[i] ? play(i) : pad.querySelector("input").click();
+    },
+    false
+  );
 });
 document.body.addEventListener("drop", blockEvent, false);
 document.body.addEventListener("dragover", blockEvent, false);
