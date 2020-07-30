@@ -52,8 +52,9 @@ If you want to start the sampler with different settings, bookmark the link gene
 
 This works with whatever file types your browser supports. It should work well with `.wav`, `.mp3`, `.ogg`, etc.
 
-## To do (prioritized)
+## To do
 
+### v1 (now released 🎉)
 - ~~Reorder samples~~ done
 - ~~Delete sample~~ done
 - ~~Keyboard control~~ done
@@ -62,13 +63,16 @@ This works with whatever file types your browser supports. It should work well w
 - ~~Configurable gap between samples~~ done
 - ~~Configurable speed / pitch control (eg. save memory by playing samples at 2x speed and slowing them down on the device)~~ done
 - ~~Remove the URL search params, add a settings menu~~ done
+- ~~Upload files on click~~ done
+
+### Future, maybe?
 - Default sounds (808?)
-- Upload files on click
 - Other tools than just drums?
 
 ## See also
 
-[PO-33 Scale App](https://punkyv4n.me/po-33-scale-app/)
+- [PO-33 Scale App](https://punkyv4n.me/po-33-scale-app/)
+- [OP-1 Drum Utility](https://splice.com/plugins/26589-op-1-drum-utility-vst-au-by-xfer-records)
 
 ### License
 
