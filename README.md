@@ -69,6 +69,16 @@ This works with whatever file types your browser supports. It should work well w
 - Default sounds (808?)
 - Other tools than just drums?
 
+## FAQ
+
+### Does this upload my samples somewhere?
+
+_No! This app works 100% locally, so your private samples remain private._
+
+### Will this make sure the samples get trimmed to pads?
+
+_Increasing the milliseconds between sample playback from the settings page might help._
+
 ## See also
 
 - [PO-33 Scale App](https://punkyv4n.me/po-33-scale-app/)
