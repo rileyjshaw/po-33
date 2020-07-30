@@ -54,7 +54,7 @@ function updateSettingsLink() {
 const urlParams = new URLSearchParams(window.location.search);
 const settings = {
   speed: parseFloat(urlParams.get("speed")) || 1,
-  maxMs: parseFloat(urlParams.get("maxMs")) || 2147483647,
+  maxMs: parseFloat(urlParams.get("maxMs")) || 40000,
   gapMs: parseFloat(urlParams.get("gapMs")) || 0,
   padNames: decodeURIComponent(
     urlParams.get("padNames") || "bd,sn,ho,hc,bd,sn,ho,hc,bd,sn,*,cy"
