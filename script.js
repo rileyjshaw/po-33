@@ -36,8 +36,8 @@ function updateSettingsInputs() {
     (setting, i) => (settingsInputs[i].value = settings[setting])
   );
   settingsInputs[3].value = settings.padNames
-    .map(name => name.replace(/,/g, "\\,"))
-    .join(", ");
+    .map(name => name.replace(/-/g, "\\-"))
+    .join(" - ");
 }
 
 function updateSettingsLink() {
@@ -47,7 +47,7 @@ function updateSettingsLink() {
   }?speed=${settings.speed}&maxMs=${settings.maxMs}&gapMs=${
     settings.gapMs
   }&padNames=${encodeURIComponent(
-    settings.padNames.map(name => name.replace(/,/g, "\\,")).join(",")
+    settings.padNames.map(name => name.replace(/-/g, "%2D")).join("-")
   )}`;
 }
 
@@ -56,11 +56,10 @@ const settings = {
   speed: parseFloat(urlParams.get("speed")) || 1,
   maxMs: parseFloat(urlParams.get("maxMs")) || 40000,
   gapMs: parseFloat(urlParams.get("gapMs")) || 0,
-  padNames: decodeURIComponent(
-    urlParams.get("padNames") || "bd,sn,ho,hc,bd,sn,ho,hc,bd,sn,*,cy"
-  )
-    .split(/(?<!\\),/)
-    .map(name => name.replace(/\\,/g, ","))
+  padNames: (urlParams.get("padNames") || "bd-sn-ho-hc-bd-sn-ho-hc-bd-sn-*-cy")
+    .split("-")
+    .map(name => decodeURIComponent(name))
+    .slice(0, 16)
 };
 
 const pads = Array.from({ length: 16 }, (_, i) => {
@@ -103,9 +102,11 @@ const settingsInputs = document.querySelectorAll(".settings input");
 });
 settingsInputs[3].addEventListener("change", e => {
   settings.padNames = e.target.value
+    .replace(/\\-/g, "%2D")
     .replace(/ /g, "")
-    .split(/(?<!\\),/)
-    .map(name => name.replace(/\\,/g, ","));
+    .split("-")
+    .map(name => decodeURIComponent(name))
+    .slice(0, 16);
   updatePadNames();
   updateSettingsLink();
 });
@@ -137,7 +138,7 @@ sortable.on("sortable:stop", ({ newIndex, oldIndex, dragEvent }) => {
   } else sourceOrder.splice(newIndex, 0, sourceOrder.splice(oldIndex, 1)[0]);
 });
 
-const audioContext = new window.AudioContext();
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const sources = Array.from({ length: 16 });
 const sourceOrder = Array.from({ length: 16 }, (_, i) => i);
 

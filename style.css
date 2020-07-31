@@ -90,6 +90,7 @@ button {
 
 .pads button {
   width: 16vmin;
+  overflow: hidden;
 }
 
 .empty button,

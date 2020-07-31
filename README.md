@@ -38,13 +38,13 @@ Click the nut icon in the top right to access a settings panel.
   - Note: This is useful for preserving device memory. Set `speed=2` and pitch-shift the sample down by an octave on the K.O. to fit twice as much data.
 - **Max sample length (ms):** Cuts off samples after a specified maximum duration, in milliseconds. Useful for kick and crash samples that just. never. end.
 - **Gap between samples (ms):** If your K.O. is having trouble auto-slicing each drum sample, increasing the milliseconds between sample playback might help. Defaults to no gap, since I tend to trim it manually anyway.
-- **Pad names:** I try to keep a specific layout with my kits, but you probably have a different style! You can tweak the text on each pad from 1–16, separated by commas.
+- **Pad names:** I try to keep a specific layout with my kits, but you probably have a different style! You can tweak the text on each pad from 1–16, separated by dashes.
 
 #### Default settings
 
 If you want to start the sampler with different settings, bookmark the link generated on the settings pane. For example, the following URL:
 
-[`https://rileyjshaw.com/po-33/?speed=2&maxMs=2000&gapMs=20&padNames=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16`](https://rileyjshaw.com/po-33/?speed=2&maxMs=2000&gapMs=20&padNames=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16)
+[`https://rileyjshaw.com/po-33/?speed=2&maxMs=2000&gapMs=20&padNames=1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16`](https://rileyjshaw.com/po-33/?speed=2&maxMs=2000&gapMs=20&padNames=1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16)
 
 …will start you off at 2x speed, with a max duration of 2s, a gap of 20s, and pads renamed to their numbers.
 
