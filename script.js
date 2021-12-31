@@ -133,7 +133,7 @@ sortable.on("drag:out:container", e => {
 sortable.on("sortable:stop", ({ newIndex, oldIndex, dragEvent }) => {
   if (draggedOut) {
     dragEvent.data.originalSource.className = "empty";
-    sources[oldIndex] = undefined;
+    sources[sourceOrder[oldIndex]] = undefined;
     updateTotalSampleLength();
   }
   sourceOrder.splice(newIndex, 0, sourceOrder.splice(oldIndex, 1)[0]);
