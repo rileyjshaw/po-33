@@ -68,7 +68,7 @@ const pads = Array.from({ length: 16 }, (_, i) => {
   const input = document.createElement("input");
   const button = document.createElement("button");
   input.setAttribute("type", "file");
-  input.setAttribute("accept", "audio/*");
+  input.setAttribute("accept", ".wav,audio/*");
   input.setAttribute("multiple", "");
   input.addEventListener("change", () => {
     if (input.files) {
